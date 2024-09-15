@@ -1,0 +1,22 @@
+ as maximum.s -o maximum.o
+ ld maximum.o -o maximum
+ ./maximum
+ echo $?
+
+
+ section .data
+    array db 10, 20, 30, 40, 50  ; Your array of bytes
+    array_length equ 5           ; The length of the array
+
+section .text
+    global _start
+
+_start:
+    ; Example: Load the length of the array into a register
+    mov eax, array_length
+    ; Now eax contains the length of the array (5 in this case)
+
+    ; Exit the program (Linux system call)
+    mov ebx, 0
+    mov eax, 1          ; SYS_exit
+    int 0x80            ; Call kernel

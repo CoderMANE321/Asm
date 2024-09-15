@@ -1,0 +1,8 @@
+as example.s -o example.o
+
+ld example.o -o exit
+
+./example
+
+
+gcc -nostartfiles -o program function.s power.c
