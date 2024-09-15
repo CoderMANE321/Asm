@@ -6,3 +6,12 @@ ld example.o -o exit
 
 
 gcc -nostartfiles -o program function.s power.c
+
+# manual link
+as --32 -o power.o power.asm
+ld -m elf_i386 -o power power.o
+./power
+
+as --32 -o factorial.o factorial.s
+ld -m elf_i386 -o factorial factorial.o
+
